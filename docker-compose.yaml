@@ -1,0 +1,14 @@
+version: '3'
+services:
+  db:
+    image: mysql/mysql-server
+    restart: always
+    environment:
+      MYSQL_USER: root
+      MYSQL_PASSWORD: toor
+      MYSQL_DATABASE: elofy
+      MYSQL_RANDOM_ROOT_PASSWORD: true
+    ports:
+      - "3306:3306"
+    volumes:
+      - /Users/renanmoraes/projects/elofy/teste-elofy-service/database/db_data:/var/lib/mysql
