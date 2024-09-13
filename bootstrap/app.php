@@ -23,7 +23,7 @@ $app = new Laravel\Lumen\Application(
     dirname(__DIR__)
 );
 
-// $app->withFacades();
+$app->withFacades();
 
 $app->withEloquent();
 
@@ -115,5 +115,9 @@ $app->router->group([
 // Load .env file
 Dotenv\Dotenv::createImmutable(base_path())->load();
 
+$app->configure('jwt');
+
+$app->register(App\Providers\AuthServiceProvider::class);
+$app->register(Tymon\JWTAuth\Providers\LumenServiceProvider::class);
 
 return $app;

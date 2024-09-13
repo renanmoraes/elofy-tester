@@ -19,3 +19,5 @@ $router->get('/', function () use ($router) {
 
 
 $router->get('/hellow', 'HelloController@hello');
+
+$router->post('login', 'AuthenticateController@login');
